@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CMPS160 Lab[4] driver</title>
+    <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {display:none;}
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    </style>
+</head>
+<body onload="main()">
+    <div>
+        <h1>Lab 4</h1>
+        <h3>- Name: Man Ting-Chun Matthew, Student ID: 1569368</h3>
+        <canvas style="border: solid 1px blue;" id='canvasElement' width = '1001px' height = '1001px'>
+        </canvas><br>
+
+        <button id="new" type="button">New</button><br>
+
+        <input name="savename" id="save_name" type="text" value="FileName">        
+        <button onclick="save_file()" type="button">Save</button><br>  
+
+        <input type="file" id="fileinput" />
+        <button id="extract" type="button">Extract SOR</button><br>
+
+        <h5>Toggle for showing surface normal</h3>
+        <label class="switch">
+            <input type="checkbox" id="toggle"/>
+            <div class="slider round"></div>
+        </label><br>
+
+        <h5>Toggle for changing surface shading</h3>
+        <label class="switch">
+            <input type="checkbox" id="shade_toggle"/>
+            <div class="slider round"></div>
+        </label><br>
+
+        <h5>Toggle for turning on ambient lighting</h3>
+        <label class="switch">
+            <input type="checkbox" id="amb_toggle"/>
+            <div class="slider round"></div>
+        </label><br>
+
+        <h5>Toggle for turning on specular lighting</h3>
+        <label class="switch">
+            <input type="checkbox" id="spec_toggle"/>
+            <div class="slider round"></div>
+        </label><br>
+
+        <h5>Toggle for changing perspectives</h3>
+        <label class="switch">
+            <input type="checkbox" id="per_toggle"/>
+            <div class="slider round"></div>
+        </label><br>
+
+        <h5>Slider for changing glossiness of object</h3>
+        <input type="range" min="1" max="20" id="gloss"/>
+        <button id="change_g" type="button">Change Glossiness</button><br>
+    </div>
+    
+	<script src="../lib/webgl-utils.js"></script>
+	<script src="../lib/webgl-debug.js"></script>
+	<script src="../lib/cuon-utils.js"></script>
+  <script src="../lib/cuon-matrix.js"></script>
+  <script src="../lib/ioSOR.js"></script>
+
+	<!-- Your Code -->
+	<script src="lab4.js" type="application/javascript"></script>
+
+	</body>
+</html>

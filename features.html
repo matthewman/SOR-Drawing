@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <title>CMPS160 Lab[4] Features</title>
+</head>
+<body>
+    <p>Name: Man Ting-Chun Matthew</p>
+    <p>Login ID: timan</p>
+    <p>Date: 2016-11-12</p>
+    <p>High Level Description (what was implemented, what was not, any special features - Last Point): </p>
+    <ul>
+        <li>Lab4 features:</li>
+        <ul>
+            <li>Zooming: When no object is selected, scrolling up or down will zoom in or out by changing the fov(only for perspective view).</li>
+            <li>Panning: When no object is selected, clicking on the background and release at another position will cause the camera to pan by changing the x y coordinates of the camera positions and look at positions(for both perspective and orthographic projection).</li>
+            <li>Moving camera in and out: When no object is selected, middle clicking together with scrolling will change the camera position in the z-axis by changing the z coordinates of the camera position and look at position(for both perspective and orthographic projection, but no visible change in orthographic view). The amount of moving is scaled up so as to differentiate from zooming.</li>
+        </ul>
+
+        <li>Old features:</li>
+        <ul>
+            <li>Draw a line in the middle of the canvas to show the rotation axis.</li>
+            <li>Points of mouse clicks are stored in the x_y_z_coordinates[0] array.</li>
+            <li>Rotated points are calculated and saved in the 2D x_y_z_coordinates array.</li>
+            <li>Colors values are stored in the 2D ver_colors.(Default to be (0,1,0))</li>
+            <li>Lines are drawn between two points for each left click.</li>
+            <li>Rubberband line is drawn between the last position and current mouse position.</li>
+            <li>When right-click is detected, the SOR Object is drawn.</li>
+            <li>When right-click is detected, the surface normal values are also calculated.</li>
+            <li>When right-click is detected, the colors for each vertex is recalculated, the colors for the four vertex of each polygon is the same.</li>
+            <li>Every time the SOR Object is drawn, the program does not allow extra points to be added (ended=True).</li>
+            <li>Saving can be done by putting the file name then clicking save.</li>
+            <li>During saving, color values are neglected. </li>
+            <li>Loading can be done by choosing the file then click Extract SOR.</li>
+            <li>During loading, default color values (0,1,0) are added.</li>
+            <li>Toggle button added for showing surface normals.</li>
+            <li>Toggle buttons added for changing surface shading and turning on ambient or specular lighting.</li>
+            <li>Default to be using diffuse lighting only and flat shading</li>     
+            <li>When ambient and specular lighting are turned off, their values are set to [0,0,0].</li>
+            <li>When ambient and specular lighting are turned on, their values are change to [0,0,0.2] and [0,1,0] respectively.(Values are used in calculations)</li>
+            <li>Glossiness factor of object default to be 1.</li>
+            <li>Slider added for changing the glossiness factor of the object, ranging from 1 to 20.</li>
+            <li>Created a 1001x1001 white canvas with 1px border.</li>
+            <li>New light source added as a yellow light.</li>
+            <li>Added a yellow cube and red line as light sources.</li>
+            <li>When the light sources(yellow cube or red line) are clicked, the sources turn gray and they are turned off, so the object becomes dimmer.</li>
+            <li>Toggle button added for switching between orthographic (default) and perspective projection.</li><br>
+            <li>Created custom object class.</li>
+            <li>All transformation are stored within the variables inside the class.</li>
+            <li>Pick object by clicking on object, and all it's color is changed to 0.5 of original when selected. </li>
+            <li>After picking an object, scaling can be done by scrolling.(Only updated when the object is unclicked)</li>
+            <li>After picking an object, translation can be done by left click and drag to another position.</li>
+            <li>After picking an object, rotation can be done by right click and drag to another position.</li>
+        </ul>
+        
+    </ul>
+    <p>User Guide</p>
+    <ul>
+        <li>Only drawing on the right side is preferred.</li>
+        <li>Only draw from top to bottom</li>
+        <li>Input FileName before clicking Save</li>
+        <li>Choose file before clicking Extract SOR</li>
+    </ul>
+    <p>
+    <p><a href="driver.html">Driver HTML File</a></p>
+    <img src="screenshot_1.png" alt="Original(Orthographic)" style="width:800px;height:400px;">
+    <img src="screenshot_2.png" alt="After pan(Orthographic)" style="width:800px;height:400px;">
+    <img src="screenshot_3.png" alt="Original(Perspective)" style="width:800px;height:400px;">
+    <img src="screenshot_4.png" alt="After zoom" style="width:800px;height:400px;">
+    <img src="screenshot_5.png" alt="After pan" style="width:800px;height:400px;">
+    <img src="screenshot_6.png" alt="After moving camera" style="width:800px;height:400px;">
+</body>
+</html>
